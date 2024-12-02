@@ -1,4 +1,4 @@
-package main
+package days
 
 import (
 	"bufio"
@@ -9,12 +9,15 @@ import (
 	"strings"
 )
 
-func main() {
-	problem2()
+func Day1() {
+	fmt.Println("Solution for Day 1, Part 1:")
+	solveDay1Part1()
+	fmt.Println("Solution for Day 1, Part 2:")
+	solveDay1Part2()
 }
 
-func problem1() {
-	file, err := os.Open("1input.txt")
+func solveDay1Part1() {
+	file, err := os.Open("days/1input.txt")
 	if err != nil {
 		fmt.Println("error opening file")
 	}
@@ -56,8 +59,8 @@ func problem1() {
 	fmt.Println(sum)
 }
 
-func problem2() {
-	file, err := os.Open("1input.txt")
+func solveDay1Part2() {
+	file, err := os.Open("days/1input.txt")
 	if err != nil {
 		fmt.Println("error opening file")
 	}
