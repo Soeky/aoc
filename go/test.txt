@@ -1,0 +1,5 @@
+AOC 2024
+Solution for Day 2, Part 1:
+sum =  190604937
+Solution for Day 2, Part 2:
+sum =  87020895
