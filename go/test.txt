@@ -1,5 +1,7 @@
 AOC 2024
-Solution for Day 2, Part 1:
-sum =  190604937
-Solution for Day 2, Part 2:
-sum =  87020895
+Solution for Day 6, Part 1:
+Position X: 4 Position Y: 6
+Ergebnis Waechter: 41
+Solution for Day 6, Part 2:
+Position X: 4 Position Y: 6
+Ergebnis Waechter: 0
