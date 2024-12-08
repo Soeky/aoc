@@ -1,57 +1,11 @@
 package days
 
 import (
+	"aoc/utils"
 	"bufio"
 	"fmt"
 	"os"
 )
-
-type Coordinate struct {
-	X, Y int
-}
-
-type CoordinateSet map[Coordinate]struct{}
-
-func NewCoordinateSet() CoordinateSet {
-	return make(CoordinateSet)
-}
-
-func (cs CoordinateSet) Add(coord Coordinate) {
-	cs[coord] = struct{}{}
-}
-
-func (cs CoordinateSet) Contains(coord Coordinate) bool {
-	_, exists := cs[coord]
-	return exists
-}
-
-func (cs CoordinateSet) Size() int {
-	return len(cs)
-}
-
-type State struct {
-	X, Y      int
-	Direction int
-}
-
-type StateSet map[State]struct{}
-
-func NewStateSet() StateSet {
-	return make(StateSet)
-}
-
-func (cs StateSet) Add(coord State) {
-	cs[coord] = struct{}{}
-}
-
-func (cs StateSet) Contains(coord State) bool {
-	_, exists := cs[coord]
-	return exists
-}
-
-func (cs StateSet) Size() int {
-	return len(cs)
-}
 
 func Day6() {
 	fmt.Println("Solution for Day 6, Part 1:")
@@ -84,13 +38,13 @@ func solveDay6Part1() {
 		}
 	}
 	fmt.Println("Position X:", posX, "Position Y:", posY)
-	visited := NewCoordinateSet()
+	visited := utils.NewCoordinateSet()
 	direction := 0 // 0 = up, 1 = right, 2 = down, 3 = left
 	dx := []int{0, 1, 0, -1}
 	dy := []int{-1, 0, 1, 0}
 
 	for posX >= 0 && posX < len(compass[0]) && posY >= 0 && posY < len(compass) {
-		visited.Add(Coordinate{X: posX, Y: posY})
+		visited.Add(utils.Coordinate{X: posX, Y: posY})
 
 		nextX := posX + dx[direction]
 		nextY := posY + dy[direction]
@@ -164,13 +118,13 @@ func solveDay6Part2() {
 func simulateGuard(compass [][]rune, startX, startY int, dx, dy []int) bool {
 	posX, posY := startX, startY
 	direction := 0
-	visited := NewStateSet()
+	visited := utils.NewStateSet()
 
 	for posX >= 0 && posX < len(compass[0]) && posY >= 0 && posY < len(compass) {
-		if visited.Contains(State{X: posX, Y: posY, Direction: direction}) {
+		if visited.Contains(utils.State{X: posX, Y: posY, Direction: direction}) {
 			return true
 		}
-		visited.Add(State{X: posX, Y: posY, Direction: direction})
+		visited.Add(utils.State{X: posX, Y: posY, Direction: direction})
 
 		nextX := posX + dx[direction]
 		nextY := posY + dy[direction]

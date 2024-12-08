@@ -8,9 +8,9 @@ import (
 
 func DayX() {
 	fmt.Println("Solution for Day X, Part 1:")
-	solveDay2Part1()
+	solveDayXPart1()
 	fmt.Println("Solution for Day X, Part 2:")
-	solveDay2Part2()
+	solveDayXPart2()
 }
 
 func solveDayXPart1() {
