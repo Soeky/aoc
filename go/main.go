@@ -7,5 +7,5 @@ import (
 
 func main() {
 	fmt.Println("AOC 2024")
-	days.Day8()
+	days.Day9()
 }
